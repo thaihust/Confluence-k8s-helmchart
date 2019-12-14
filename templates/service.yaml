@@ -11,9 +11,13 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 8090
+      targetPort: http
       protocol: TCP
       name: http
+    - port: 8091
+      targetPort: synchrony
+      protocol: TCP
+      name: synchrony
   selector:
     app: {{ template "atlassian-confluence.name" . }}
     release: {{ .Release.Name }}
