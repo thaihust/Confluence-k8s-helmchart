@@ -11,11 +11,11 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 8090 
       protocol: TCP
       name: http
     - port: 8091
-      targetPort: synchrony
+      targetPort: 8091 
       protocol: TCP
       name: synchrony
   selector:
