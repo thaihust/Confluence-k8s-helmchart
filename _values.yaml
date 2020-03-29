@@ -6,19 +6,20 @@ image:
   pullPolicy: IfNotPresent
 
 confluence:
-  javaHeapSize: 2048m
-  javaMemoryOptions: "-XX:MaxMetaspaceSize=512m -XX:MaxDirectMemorySize=512m"
+  reverseProxyHost: confluence.fago-labs.club
+  reverseProxyPort: 443
+  reverseProxyScheme: https
+  javaHeapSize: 1024m
+  javaMemoryOptions: "-XX:MaxMetaspaceSize=512m -XX:MaxDirectMemorySize=10m"
   javaOptions: ""
 
 synchrony:
   ## disable Synchrony by default
-  javaHeapSize: 1024m
+  javaHeapSize: 0m
 
 service:
   type: ClusterIP
   port: 80
-
-domain: confluence.fago-labs.club 
 
 ingress:
   enabled: false

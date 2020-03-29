@@ -21,6 +21,10 @@ spec:
         app: {{ template "atlassian-confluence.name" . }}
         release: {{ .Release.Name }}
     spec:
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "{{ .Values.domain }}"
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
