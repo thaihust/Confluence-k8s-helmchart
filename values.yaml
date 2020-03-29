@@ -17,6 +17,10 @@ synchrony:
   ## disable Synchrony by default
   javaHeapSize: 1024m
 
+service:
+  type: ClusterIP
+  port: 8090 
+
 domain: confluence.fago-labs.club 
 
 ingress:
