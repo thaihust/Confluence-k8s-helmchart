@@ -8,7 +8,7 @@ image:
 confluence:
   reverseProxyHost:
   reverseProxyPort:
-  reverseProxyScheme:
+  reverseProxyScheme: ""
   javaHeapSize: 2048m
   javaMemoryOptions: "-XX:MaxMetaspaceSize=512m -XX:MaxDirectMemorySize=512m"
   javaOptions: ""
