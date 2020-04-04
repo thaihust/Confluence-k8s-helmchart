@@ -30,6 +30,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: CATALINA_CONNECTOR_PROXYNAME
+              value: {{ .Values.confluence.reverseProxyHost | quote }}
+            - name: CATALINA_CONNECTOR_PROXYPORT
+              value: {{ .Values.confluence.reverseProxyPort | quote }}
+            - name: CATALINA_CONNECTOR_SCHEME
+              value: {{ .Values.confluence.reverseProxyScheme | quote }}
+            - name: CATALINA_CONNECTOR_SECURE
+              value: {{ (eq "https" .Values.confluence.reverseProxyScheme) | quote }}    
             - name: JVM_MINIMUM_MEMORY
               value: {{ .Values.confluence.javaHeapSize | quote }}
             - name: JVM_MAXIMUM_MEMORY
