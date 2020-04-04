@@ -38,13 +38,6 @@ spec:
               value: {{ .Values.confluence.javaHeapSize | quote }}
             - name: JVM_SUPPORT_RECOMMENDED_ARGS
               value: {{ printf "%s %s -Dsynchrony.memory.max=%s" .Values.confluence.javaMemoryOptions .Values.confluence.javaOptions .Values.synchrony.javaHeapSize | quote }}
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
-            - name: synchrony
-              containerPort: 8091
-              protocol: TCP
           livenessProbe:
             tcpSocket:
               port: http
