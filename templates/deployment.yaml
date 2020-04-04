@@ -31,7 +31,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: ATL_TOMCAT_PORT
-              value: 80
+              value: "80"
             - name: JVM_MINIMUM_MEMORY
               value: {{ .Values.confluence.javaHeapSize | quote }}
             - name: JVM_MAXIMUM_MEMORY
