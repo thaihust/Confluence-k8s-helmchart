@@ -6,9 +6,9 @@ image:
   pullPolicy: IfNotPresent
 
 confluence:
-  reverseProxyHost:
-  reverseProxyPort:
-  reverseProxyScheme: ""
+  reverseProxyHost: confluence.fago-labs.club
+  reverseProxyPort: 80
+  reverseProxyScheme: http
   javaHeapSize: 2048m
   javaMemoryOptions: "-XX:MaxMetaspaceSize=512m -XX:MaxDirectMemorySize=512m"
   javaOptions: ""
@@ -19,7 +19,7 @@ synchrony:
 
 service:
   type: ClusterIP
-  port: 8090 
+  port: 80 
 
 domain: confluence.fago-labs.club 
 
